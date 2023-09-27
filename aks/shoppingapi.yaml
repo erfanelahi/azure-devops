@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: shoppingapi
-          image: erfanacr.azurecr.io/shoppingapi
+          image: erfanacr.azurecr.io/shoppingapi:latest
           imagePullPolicy: IfNotPresent          
           ports:
             - containerPort: 80
