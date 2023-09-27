@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '68bf4cd2-74d8-4fc4-a384-d96d6cbae108'
   imageRepository: 'shoppingapi'
   containerRegistry: 'erfanacr.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'Shopping/Shopping.API/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'erfanacr1772b162-auth'
 
@@ -38,7 +38,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        buildContext: '**'
+        buildContext: $(Build.SourcesDirectory)/Shopping
         tags: |
           $(tag)
 
